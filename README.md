@@ -23,7 +23,7 @@ Controle de entrada e saída de veículos, cadastrar funcionários, controle de 
 para um bom funcionamento da empresa.
 
 ## Funcionalidades do sistema⚙:
-  ## Requisitos Funcionais:
+- Requisitos Funcionais:
   - Descrição dos usuários
      Os usuários do sistema se dividem basicamente em três grupos:
     • Gerentes – Têm acesso a todas as funcionalidades do sistema.
