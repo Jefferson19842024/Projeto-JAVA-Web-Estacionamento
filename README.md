@@ -24,7 +24,7 @@ para um bom funcionamento da empresa.
 
 ## Funcionalidades do sistema⚙:
 - Requisitos Funcionais:
-  - Descrição dos usuários
+  - Descrição dos usuários:
      Os usuários do sistema se dividem basicamente em três grupos:
     • Gerentes – Têm acesso a todas as funcionalidades do sistema.
     • Atendentes – Têm acesso às funcionalidades de atendimento do sistema.
