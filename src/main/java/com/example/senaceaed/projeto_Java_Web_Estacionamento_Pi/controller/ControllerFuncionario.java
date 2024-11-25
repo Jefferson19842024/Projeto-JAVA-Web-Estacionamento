@@ -1,6 +1,5 @@
 package com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.controller;
 
-import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.model.Funcionario;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -15,12 +14,23 @@ public class ControllerFuncionario {
     }
     
      @GetMapping("/cadastrarFuncionario")
-    public String mostraCadastroFilme() {
-        model.addAttribute("funcionario", new Funcionario());
-        return "cadastrarFilme";
+    public String mostraCadastroFuncionario() {
+        return "cadastrarFuncionario";
     }
 
+    
+     @GetMapping("/listagemFuncionario")
+    public String mostraListagemFuncionario() {
+        return "listagemFuncionario";
+    }
 
+    
+    
+    
+    
+    
+    
+    
     /* @PostMapping("/preferencias")
     public String gravaPreferencias(@ModelAttribute Preferencia pref, HttpServletResponse response) {
         Cookie cookiePrefEstilo = new Cookie("pref-estilo", pref.getEstilo());

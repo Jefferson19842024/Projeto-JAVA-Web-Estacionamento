@@ -1,14 +1,15 @@
-
+<!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estacionamento JeffPark</title>
     <link rel="icon" href="./imagens/Logo.jpeg" type="image/jpeg">
 
-    <!-- Link para o CSS dinâmico baseado no tema -->
+ 
     <link th:href="@{'/css/' + ${css} + '.css'}" rel="stylesheet" type="text/css">
 
-    <!-- Link para o CSS fixo -->
+  
     <link href="./css/style.css" rel="stylesheet"> <!-- Alterado para o novo arquivo CSS -->
 
     <!-- Bootstrap -->
@@ -31,7 +32,8 @@
 
     <nav class="main-nav">
     <ul>
-        <li><a href="./cadastrar.html">Cadastrar</a></li>
+        <li><a th:href="@{/cadastrarFuncionario}" class="me-3">Cadastrar Funcionario</a></li>
+        <li><a th:href="@{/listagemFuncionario}" class="me-3">Listar Funcionario</a></li>
         <li><a href="./login.html">Login</a></li>
         <li><a href="./esqueceuSenha.html">Esqueceu Senha</a></li>
         <li><a href="./entradaVeiculos.html">Entrada Veículos</a></li>
