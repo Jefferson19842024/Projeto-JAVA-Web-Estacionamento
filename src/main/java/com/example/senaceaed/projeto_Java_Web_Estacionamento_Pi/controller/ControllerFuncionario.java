@@ -1,34 +1,43 @@
 package com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.controller;
 
+import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.model.Funcionario;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ControllerFuncionario {
-    
-  
+
+    private List<Funcionario> listaFuncionario = new ArrayList();
 
     @GetMapping("/tela-inicial")
     public String mostraIndex() {
         return "index";
     }
-    
-     @GetMapping("/cadastrarFuncionario")
-    public String mostraCadastroFuncionario() {
+
+    @GetMapping("/cadastrarFuncionario")
+    public String mostraCadastroFuncionario(Model model) {
+        model.addAttribute("funcionario", new Funcionario());
         return "cadastrarFuncionario";
     }
 
-    
-     @GetMapping("/listagemFuncionario")
-    public String mostraListagemFuncionario() {
+    @PostMapping("/guardarFuncionario")
+    public String processarFormulario(Model model, @ModelAttribute Funcionario funcionario) {
+        funcionario.setId(listaFuncionario.size() + 1);
+        listaFuncionario.add(funcionario);
+        return "redirect:/listagemFuncionario";
+    }
+
+    @GetMapping("/listagemFuncionario")
+    public String mostraListagemFuncionario(Model model) {
+        model.addAttribute("funcionarios", listaFuncionario);
         return "listagemFuncionario";
     }
 
-    
-    
-    
-    
-    
     
     
     /* @PostMapping("/preferencias")
@@ -40,16 +49,7 @@ public class ControllerFuncionario {
         return "redirect:/tela-inicial";
     }
   
-    @PostMapping("/guardar-Filme")
-    public String processarFormulario(Model model, @ModelAttribute Filme filme, RedirectAttributes redirectAttributes) {
-        if (filme.getId() != null) {
-            filmeService.atualizar(filme.getId(), filme);
-        } else {
-            filmeService.criarFilme(filme);
-        }
-        redirectAttributes.addFlashAttribute("Filmes", filmeService.listarTodos());
-        return "redirect:/listagemFilmes";
-    }
+   
 
    
     @GetMapping("/listagemFilmes")
@@ -99,5 +99,4 @@ public class ControllerFuncionario {
         return "redirect:/listagemFilmes";
     }
 } */
-
 }

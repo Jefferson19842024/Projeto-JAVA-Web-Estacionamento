@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estacionamento JeffPark</title>
+    <title>Cadastrar Funcioanrio</title>
     <link rel="icon" href="./imagens/Logo.jpeg" type="image/jpeg">
     <link th:href="@{'/css/' + ${css} + '.css'}" rel="stylesheet" type="text/css">
-    <link href="./css/style.css" rel="stylesheet"> 
-    
-   
+    <link href="./css/style.css" rel="stylesheet">
+  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -24,40 +23,45 @@
             </nav>
         </div>
     </header>
-    
- 
+
+
     <main class="container my-5">
         <h2 class="text-center mb-4">Cadastrar Novo Funcionário</h2>
 
-        <form action="/cadastrarFuncionario" method="POST" id="formFuncionario">
+      
+        <form action="#" th:action="@{/guardarFuncionario}" method="POST" id="formFuncionario" th:object="${funcionario}">
+
+          
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do funcionário" required>
+                
+                <input type="text" class="form-control" id="nome" th:field="*{nome}" placeholder="Digite o nome do funcionário" required>
             </div>
 
+            <!-- Campo de código do funcionário com Thymeleaf -->
             <div class="mb-3">
                 <label for="codigoFuncionario" class="form-label">Código do Funcionário:</label>
-                <input type="text" class="form-control" id="codigoFuncionario" name="codigoFuncionario" placeholder="Digite o código do funcionário" required>
+                <!-- th:field usa a propriedade id da classe Funcionario -->
+                <input type="text" class="form-control" id="codigoFuncionario" th:field="*{id}" placeholder="Digite o código do funcionário" required>
             </div>
 
+            <!-- Campo de cargo com Thymeleaf -->
             <div class="mb-3">
                 <label for="cargo" class="form-label">Cargo:</label>
-                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Digite o cargo do funcionário" required>
+                <!-- th:field usa a propriedade cargo da classe Funcionario -->
+                <input type="text" class="form-control" id="cargo" th:field="*{cargo}" placeholder="Digite o cargo do funcionário" required>
             </div>
 
             <div class="d-flex justify-content-between">
-          
-                <button type="submit" class="btn btn-success">Cadastrar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
                 
                 <button type="reset" class="btn btn-warning">Limpar</button>
 
-                <!-- Quando clicado, vai para a página inicial -->
                 <a href="index.html" class="btn btn-primary">Voltar</a>
             </div>
         </form>
     </main>
 
-    <!-- Rodapé -->
     <footer>
         <div class="left">
             <img src="./Imagens/telefone.webp" alt="Telefone">
@@ -78,8 +82,6 @@
             <p>Youtube: emprestimos-online</p>
         </div>
     </footer>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
