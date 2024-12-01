@@ -1,37 +1,36 @@
-/* Estilo para o header */
+
 header {
     background-color: yellow;
-    padding: 10px 0; /* Espaçamento superior e inferior */
+    padding: 10px 0; 
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between; /* Espalha os itens ao longo da linha */
-    align-items: center; /* Alinha os itens no centro vertical */
-    max-width: 3000px; /* Largura máxima */
-    margin: 0 auto; /* Centraliza o conteúdo */
-    padding: 0 5px; /* Espaçamento nas laterais */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 3000px;
+    margin: 0 auto; 
+    padding: 0 5px; 
 }
 
-/* Logo à esquerda */
+
 .logo img {
-    width: 100px; /* Tamanho ajustado do logo */
+    width: 100px;
     height: auto;
 }
 
-/* Centraliza o título */
 h1 {
-    color: #fff; /* Cor do texto em branco */
+    color: #fff;
     font-size: 40px;
-    text-align: center; /* Centraliza o texto */
-    flex-grow: 2; /* Faz o título crescer para ocupar o espaço central */
-    margin: 0; /* Remove margem padrão do h1 */
+    text-align: center;
+    flex-grow: 2;
+    margin: 0; 
 }
 
-/* Barra de pesquisa à direita */
+
 .pesquisa {
     display: flex;
-    align-items: center; /* Alinha os itens da pesquisa verticalmente */
+    align-items: center;
 }
 
 .pesquisa input {
@@ -46,7 +45,6 @@ h1 {
     border-radius: 5px;
 }
 
-/* Estilo do footer */
 footer {
     display: flex;
     justify-content: space-between;
@@ -74,78 +72,74 @@ footer p {
     margin-top: 5px;
 }
 
-/* Estilo para a div de texto centralizado */
 .text-container {
     display: grid;
-    place-items: center; /* Centraliza o conteúdo tanto vertical quanto horizontalmente */
-    height: 100vh; /* Altura total da tela */
-    text-align: center; /* Para centralizar o texto dentro dos elementos */
-    margin-bottom: 20px; /* Espaço entre .text-container e .info-container */
+    place-items: center;
+    height: 100vh;
+    text-align: center;
+    margin-bottom: 20px; 
 }
 
-/* Estilo para a div .info-container */
 .info-container {
-    text-align: center; /* Centraliza o texto dentro da div */
-    margin-top: 20px; /* Espaço acima da div */
+    text-align: center; 
+    margin-top: 20px; 
     display: grid;
-    place-items: center; /* Centraliza o conteúdo vertical e horizontalmente */
-    height: 100vh; /* Altura total da tela */
+    place-items: center; 
+    height: 100vh;
 }
 
 .info-container h1 {
-    font-size: 24px; /* Ajusta o tamanho da fonte */
-    margin-bottom: 20px; /* Espaço entre o título e a imagem */
+    font-size: 24px; 
+    margin-bottom: 20px; 
 }
 
 .info-container img {
-    width: 200px; /* Define o tamanho da imagem */
-    height: 200px; /* Define a altura da imagem */
+    width: 200px; 
+    height: 200px; 
     display: block;
-    margin: 10px auto; /* Centraliza a imagem */
+    margin: 10px auto; 
 }
 
-/* Estilo para a navegação */
+
 .main-nav {
-    background-color: #003366; /* Cor de fundo azul */
+    background-color: #003366; 
     padding: 15px 0;
-    margin-top: 10px; /* Espaçamento entre o header e a nav */
+    margin-top: 10px; 
 }
 
 .main-nav ul {
     display: flex;
-    justify-content: center; /* Alinha os links ao centro */
+    justify-content: center; 
     margin: 0;
     padding: 0;
 }
 
 .main-nav li {
     list-style-type: none;
-    margin-right: 20px; /* Espaço entre os links */
+    margin-right: 20px; 
 }
 
 .main-nav a {
-    color: white; /* Cor dos links */
-    text-decoration: none; /* Remove o sublinhado */
+    color: white; 
+    text-decoration: none;
     font-size: 18px;
     padding: 10px 15px;
 }
 
 .main-nav a:hover {
-    background-color: #007bff; /* Cor de fundo ao passar o mouse */
-    border-radius: 5px; /* Borda arredondada */
+    background-color: #007bff;
+    border-radius: 5px;
 }
 
-/* Estilo para o conteúdo principal */
 .main-content {
-    display: flex; /* Utiliza flexbox */
-    justify-content: flex-start; /* Alinha os itens ao topo */
-    align-items: flex-start; /* Alinha os itens ao topo */
-    margin-top: 30px; /* Adiciona um espaço superior */
-    gap: 20px; /* Adiciona espaço entre as divs */
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    margin-top: 30px; 
+    gap: 20px; 
 }
 
-/* Estilo para as divs dentro da main-content */
 .text-container, .info-container {
-    width: 60%; /* Texto e imagem ocupam 60% da largura */
-    text-align: center; /* Centraliza o conteúdo dentro das divs */
+    width: 60%;
+    text-align: center; 
 }
