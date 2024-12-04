@@ -1,0 +1,145 @@
+
+header {
+    background-color: yellow;
+    padding: 10px 0; 
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 3000px;
+    margin: 0 auto; 
+    padding: 0 5px; 
+}
+
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+h1 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    flex-grow: 2;
+    margin: 0; 
+}
+
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+}
+
+.pesquisa input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.pesquisa button {
+    padding: 6px 12px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    padding: 10px 50px;
+    background-color: #003366;
+    color: white;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+}
+
+footer p {
+    margin-top: 5px;
+}
+
+.text-container {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.info-container {
+    text-align: center; 
+    margin-top: 20px; 
+    display: grid;
+    place-items: center; 
+    height: 100vh;
+}
+
+.info-container h1 {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+}
+
+.info-container img {
+    width: 200px; 
+    height: 200px; 
+    display: block;
+    margin: 10px auto; 
+}
+
+
+.main-nav {
+    background-color: #003366; 
+    padding: 15px 0;
+    margin-top: 10px; 
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center; 
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    list-style-type: none;
+    margin-right: 20px; 
+}
+
+.main-nav a {
+    color: white; 
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.main-nav a:hover {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    margin-top: 30px; 
+    gap: 20px; 
+}
+
+.text-container, .info-container {
+    width: 60%;
+    text-align: center; 
+}
