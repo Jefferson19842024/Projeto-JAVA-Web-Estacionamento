@@ -11,7 +11,11 @@
     <groupId>com.example.senaceaed</groupId>
     <artifactId>projeto-Java-Web-Estacionamento-Pi</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+<<<<<<< HEAD
     <name>projeto-Java-Web-Estacionamento</name>
+=======
+    <name>projeto-Java-Web-Estacionamento-Pi</name>
+>>>>>>> a57484bd01dc28b4a8bb6edc856142476c7446cc
     <description>Projeto Integrador II Spring Boot </description>
     <url/>
     <licenses>
@@ -59,7 +63,11 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> a57484bd01dc28b4a8bb6edc856142476c7446cc
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
