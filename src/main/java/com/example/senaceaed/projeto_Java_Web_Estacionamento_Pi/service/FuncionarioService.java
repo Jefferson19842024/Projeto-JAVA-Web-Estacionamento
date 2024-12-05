@@ -1,27 +1,45 @@
 package com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.service;
 
 import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.model.Funcionario;
-import java.util.ArrayList;
-import java.util.List;
+import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.repository.FuncionarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class FuncionarioService {
-    private List<Funcionario> funcionarios = new ArrayList<>();
 
-    public Funcionario salvarFuncionario(Funcionario funcionario) {
-        funcionarios.add(funcionario);
-        return funcionario;
+    @Autowired
+    private FuncionarioRepository funcionarioRepository;
+ 
+    public Funcionario buscarPorId(Long id) { 
+        return funcionarioRepository.findById(id).orElseThrow(() -> new RuntimeException("Funcionario não encontrado"));
     }
 
-    public Funcionario buscarPorId(Integer id) {
-        return funcionarios.stream()
-                           .filter(func -> func.getId().equals(id))
-                           .findFirst()
-                           .orElse(null);
+    public Funcionario criarFuncionario(Funcionario funcionario) {
+          if (funcionarioRepository.existsByCodigoFuncionario(funcionario.getCodigoFuncionario())) {
+        throw new RuntimeException("Código do funcionário já existe.");
+    }
+        funcionario.setId(null); 
+        return funcionarioRepository.save(funcionario);
     }
 
-    public List<Funcionario> listarFuncionarios() {
-        return funcionarios;
+    public List<Funcionario> listarTodos() {
+        return funcionarioRepository.findAll();
+    }
+
+    public Funcionario atualizar(Long id, Funcionario funcionario) {  
+        Funcionario funcionarioEncontrado = buscarPorId(id);
+        funcionarioEncontrado.setNome(funcionario.getNome());
+        funcionarioEncontrado.setCargo(funcionario.getCargo());
+        funcionarioEncontrado.setCodigoFuncionario(funcionario.getCodigoFuncionario());
+        funcionarioRepository.save(funcionarioEncontrado);
+        return funcionarioEncontrado;
+    }
+
+    public void excluir(Long id) { 
+        Funcionario funcionarioEncontrado = buscarPorId(id);
+        funcionarioRepository.deleteById(funcionarioEncontrado.getId());
     }
 }

@@ -1,0 +1,37 @@
+.tema-escuro {
+    background-color: #505050 !important;
+    color: white !important;
+}
+
+.tema-escuro header {
+    background-color: #003366 !important;
+}
+
+.tema-escuro .header-container h1 {
+    color: white !important;
+}
+
+.tema-escuro footer {
+    background-color: #003366 !important;
+    color: white !important;
+}
+
+.tema-escuro .main-nav {
+    background-color: #003366 !important;
+}
+
+.tema-escuro .main-nav a {
+    color: white !important;
+}
+
+.tema-escuro .main-nav a:hover {
+    background-color: #007bff;
+}
+
+.tema-escuro a, .tema-escuro a:visited {
+    color: white !important;
+}
+
+.tema-escuro table, .tema-escuro th, .tema-escuro td {
+    color: white !important; 
+}

@@ -1,49 +1,53 @@
 package com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.service;
 
 import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.model.Veiculo;
+import com.example.senaceaed.projeto_Java_Web_Estacionamento_Pi.repository.VeiculoRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class VeiculoService {
+    
+    @Autowired
+    VeiculoRepository veiculoRepository;
 
-    private List<Veiculo> veiculos = new ArrayList<>(); 
-
-    public void salvarVeiculo(Veiculo veiculo) {
-        Optional<Veiculo> veiculoExistente = veiculos.stream()
-        .filter(v -> v.getPlaca().equals(veiculo.getPlaca()))
-        .findFirst();
-
-        if (veiculoExistente.isPresent()) {
+   public Veiculo salvarVeiculo(Veiculo veiculo) {
+       
+        if (veiculoRepository.existsByPlaca(veiculo.getPlaca())) {
             throw new IllegalArgumentException("Já existe um veículo com a placa: " + veiculo.getPlaca());
         }
-
-        int novoId = veiculos.size() + 1;
-        veiculo.setId(novoId);
-        veiculos.add(veiculo);
+        
+        return veiculoRepository.save(veiculo); 
     }
 
     public List<Veiculo> listarVeiculos() {
-        return veiculos;
+        return veiculoRepository.findAll();  
     }
 
-    public Veiculo buscarPorId(Integer id) {
-        Optional<Veiculo> veiculo = veiculos.stream()
-        .filter(v -> v.getId().equals(id))
-        .findFirst();
-        return veiculo.orElse(null);
+     public Veiculo buscarPorId(Long id) {
+        return veiculoRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Veículo não encontrado"));  
     }
 
-    public void atualizarVeiculo(Veiculo veiculo) {
+    public Veiculo atualizarVeiculo(Long id, Veiculo veiculo) {
       
-        veiculos.removeIf(v -> v.getId().equals(veiculo.getId()));
-        veiculos.add(veiculo);  
+        Veiculo veiculoEncontrado = buscarPorId(id);
+
+        veiculoEncontrado.setPlaca(veiculo.getPlaca());
+        veiculoEncontrado.setModelo(veiculo.getModelo());
+        veiculoEncontrado.setValor(veiculo.getValor());
+        veiculoEncontrado.setTipoPagamento(veiculo.getTipoPagamento());
+        veiculoEncontrado.setDataRegistro(veiculo.getDataRegistro());
+        veiculoEncontrado.setDataSaida(veiculo.getDataSaida());
+        veiculoEncontrado.setFuncionario(veiculo.getFuncionario());
+
+        return veiculoRepository.save(veiculoEncontrado); 
     }
 
-    public void excluirVeiculo(Integer id) {
-        veiculos.removeIf(v -> v.getId().equals(id));
+    public void excluirVeiculo(Long id) {
+        Veiculo veiculoEncontrado = buscarPorId(id);
+        veiculoRepository.delete(veiculoEncontrado);  
     }
+
 }

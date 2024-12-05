@@ -1,0 +1,37 @@
+.tema-claro {
+    background-color: #fff !important;
+    color: #505050 !important;
+}
+
+.tema-claro header {
+    background-color: yellow !important;
+}
+
+.tema-claro .header-container h1 {
+    color: #505050 !important;
+}
+
+.tema-claro footer {
+    background-color: #f1f1f1 !important;
+    color: #505050 !important;
+}
+
+.tema-claro .main-nav {
+    background-color: #007bff !important;
+}
+
+.tema-claro .main-nav a {
+    color: white !important;
+}
+
+.tema-claro .main-nav a:hover {
+    background-color: #0056b3;
+}
+
+.tema-claro a, .tema-claro a:visited {
+    color: #505050 !important;
+}
+
+.tema-claro table, .tema-claro th, .tema-claro td {
+    color: #505050 !important;
+}
